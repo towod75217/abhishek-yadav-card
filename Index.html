@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abhishek Yadav & Co. | Company Secretaries, Lucknow</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --royal: #1A3FA0;
+  --royal-dark: #0F2870;
+  --royal-mid: #2452BF;
+  --royal-light: #3B6FDE;
+  --sky: #E8EFFF;
+  --sky-mid: #C7D7FF;
+  --white: #FFFFFF;
+  --off: #F5F7FF;
+  --dark: #0F172A;
+  --gray: #64748B;
+  --light-gray: #F1F5F9;
+  --border: #CBD5E1;
+  --accent: #1A3FA0;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:'Inter',sans-serif; color:var(--dark); background:var(--white); overflow-x:hidden; }
+
+/* ─── NAV ─── */
+nav {
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:rgba(26,63,160,0.97); backdrop-filter:blur(14px);
+  height:70px; padding:0 6%; display:flex; align-items:center; justify-content:space-between;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  box-shadow:0 2px 20px rgba(15,40,112,0.3);
+}
+.nav-brand { display:flex; align-items:center; gap:14px; }
+.cs-badge {
+  width:46px; height:46px; background:var(--white); border-radius:10px;
+  display:flex; align-items:center; justify-content:center;
+  flex-direction:column; gap:1px;
+}
+.cs-badge .cs-text { font-family:'Playfair Display',serif; font-size:17px; font-weight:700; color:var(--royal); line-height:1; }
+.cs-badge .cs-line { width:28px; height:2px; background:var(--royal); border-radius:2px; }
+.brand-text .name { font-size:15px; font-weight:700; color:var(--white); letter-spacing:0.3px; }
+.brand-text .sub { font-size:10px; color:rgba(255,255,255,0.6); letter-spacing:1.2px; text-transform:uppercase; margin-top:1px; }
+.nav-links { display:flex; align-items:center; gap:4px; }
+.nav-links a { color:rgba(255,255,255,0.85); text-decoration:none; font-size:13.5px; font-weight:500; padding:8px 15px; border-radius:6px; transition:all 0.2s; }
+.nav-links a:hover { background:rgba(255,255,255,0.12); color:var(--white); }
+.nav-cta { background:var(--white) !important; color:var(--royal) !important; font-weight:700 !important; padding:9px 20px !important; }
+.nav-cta:hover { background:var(--sky) !important; transform:translateY(-1px); box-shadow:0 4px 12px rgba(0,0,0,0.15); }
+.hamburger { display:none; flex-direction:column; gap:5px; cursor:pointer; padding:5px; }
+.hamburger span { display:block; width:24px; height:2.5px; background:var(--white); border-radius:2px; }
+
+/* ─── HERO ─── */
+#home {
+  min-height:100vh; padding-top:70px;
+  background:linear-gradient(145deg, var(--royal-dark) 0%, var(--royal) 55%, var(--royal-mid) 100%);
+  position:relative; overflow:hidden; display:flex; align-items:center;
+}
+.hero-circles {
+  position:absolute; inset:0; pointer-events:none; overflow:hidden;
+}
+.hc { position:absolute; border-radius:50%; border:1px solid rgba(255,255,255,0.06); }
+.hc1 { width:500px; height:500px; top:-100px; right:-100px; }
+.hc2 { width:700px; height:700px; bottom:-250px; left:-200px; }
+.hc3 { width:300px; height:300px; top:50%; right:15%; opacity:0.5; }
+.hero-grid { max-width:1240px; margin:0 auto; padding:80px 6%; display:grid; grid-template-columns:1.1fr 1fr; gap:60px; align-items:center; position:relative; z-index:2; width:100%; }
+.hero-pill { display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); border-radius:50px; padding:6px 16px; margin-bottom:24px; }
+.hero-pill span { font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:rgba(255,255,255,0.9); }
+.hero-dot { width:7px; height:7px; background:var(--white); border-radius:50%; animation:blink 2s infinite; }
+@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+.hero-h1 { font-family:'Playfair Display',serif; font-size:clamp(36px,4.5vw,60px); font-weight:700; color:var(--white); line-height:1.12; margin-bottom:10px; }
+.hero-h1 .under { position:relative; }
+.hero-h1 .under::after { content:''; position:absolute; bottom:-4px; left:0; right:0; height:3px; background:rgba(255,255,255,0.4); border-radius:2px; }
+.hero-tagline { font-size:15px; color:rgba(255,255,255,0.7); letter-spacing:0.5px; margin-bottom:22px; font-weight:500; }
+.hero-desc { font-size:16px; line-height:1.85; color:rgba(255,255,255,0.75); max-width:500px; margin-bottom:36px; }
+.hero-btns { display:flex; gap:14px; flex-wrap:wrap; }
+.btn-w { display:inline-flex; align-items:center; gap:8px; background:var(--white); color:var(--royal); font-weight:700; font-size:14px; padding:14px 30px; border-radius:8px; text-decoration:none; transition:all 0.25s; }
+.btn-w:hover { transform:translateY(-2px); box-shadow:0 8px 24px rgba(0,0,0,0.2); }
+.btn-o { display:inline-flex; align-items:center; gap:8px; background:transparent; border:1.5px solid rgba(255,255,255,0.4); color:var(--white); font-weight:500; font-size:14px; padding:14px 28px; border-radius:8px; text-decoration:none; transition:all 0.25s; }
+.btn-o:hover { border-color:var(--white); background:rgba(255,255,255,0.08); }
+.hero-info { display:flex; gap:36px; margin-top:44px; padding-top:32px; border-top:1px solid rgba(255,255,255,0.12); }
+.hi-item { }
+.hi-num { font-family:'Playfair Display',serif; font-size:34px; font-weight:700; color:var(--white); line-height:1; }
+.hi-label { font-size:11px; color:rgba(255,255,255,0.55); text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+.hero-right { display:flex; flex-direction:column; gap:14px; }
+.hero-card { background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.14); border-radius:14px; padding:20px 22px; backdrop-filter:blur(8px); transition:all 0.25s; }
+.hero-card:hover { background:rgba(255,255,255,0.13); transform:translateX(-4px); }
+.hc-top { display:flex; align-items:center; gap:12px; margin-bottom:8px; }
+.hc-icon { width:38px; height:38px; background:rgba(255,255,255,0.15); border-radius:9px; display:flex; align-items:center; justify-content:center; font-size:18px; }
+.hc-title { font-size:14px; font-weight:600; color:var(--white); }
+.hc-desc { font-size:12.5px; color:rgba(255,255,255,0.6); line-height:1.6; }
+
+/* ─── TICKER ─── */
+.ticker-bar { background:var(--white); border-top:2px solid var(--sky-mid); border-bottom:2px solid var(--sky-mid); padding:14px 0; overflow:hidden; }
+.ticker-track { display:flex; animation:ticker 40s linear infinite; white-space:nowrap; }
+.t-item { font-size:12px; font-weight:600; color:var(--royal); letter-spacing:1.2px; text-transform:uppercase; padding:0 28px; border-right:1px solid var(--sky-mid); flex-shrink:0; }
+.t-item::before { content:'●'; font-size:6px; margin-right:10px; color:var(--royal-light); vertical-align:middle; }
+@keyframes ticker { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+/* ─── SECTION BASE ─── */
+section { padding:90px 6%; }
+.container { max-width:1240px; margin:0 auto; }
+.sec-label { display:inline-block; background:var(--sky); border:1px solid var(--sky-mid); color:var(--royal); font-size:11px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:5px 14px; border-radius:4px; margin-bottom:14px; }
+.sec-h2 { font-family:'Playfair Display',serif; font-size:clamp(30px,3.5vw,48px); font-weight:700; color:var(--royal-dark); line-height:1.15; margin-bottom:14px; }
+.sec-sub { font-size:16px; color:var(--gray); line-height:1.8; max-width:560px; }
+
+/* ─── ABOUT ─── */
+#about { background:var(--off); }
+.about-wrap { display:grid; grid-template-columns:1fr 1.1fr; gap:70px; align-items:center; }
+.about-visual { position:relative; }
+.about-box {
+  background:linear-gradient(145deg, var(--royal-dark), var(--royal));
+  border-radius:20px; padding:48px 36px; text-align:center; position:relative; overflow:hidden;
+}
+.about-box::before { content:'CS'; position:absolute; bottom:-20px; right:-10px; font-family:'Playfair Display',serif; font-size:130px; font-weight:700; color:rgba(255,255,255,0.04); line-height:1; pointer-events:none; }
+.ab-logo { width:90px; height:90px; background:var(--white); border-radius:50%; margin:0 auto 20px; display:flex; align-items:center; justify-content:center; box-shadow:0 0 0 4px rgba(255,255,255,0.15); flex-direction:column; gap:2px; }
+.ab-logo .cs-big { font-family:'Playfair Display',serif; font-size:28px; font-weight:700; color:var(--royal); line-height:1; }
+.ab-logo .cs-line2 { width:36px; height:2.5px; background:var(--royal); border-radius:2px; }
+.ab-name { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--white); margin-bottom:6px; }
+.ab-role { font-size:13px; color:rgba(255,255,255,0.65); margin-bottom:4px; }
+.ab-qual { font-size:12px; color:rgba(255,255,255,0.5); }
+.ab-tags { display:flex; flex-wrap:wrap; justify-content:center; gap:8px; margin-top:22px; }
+.abtag { background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.2); color:rgba(255,255,255,0.85); font-size:11px; font-weight:500; padding:5px 14px; border-radius:50px; }
+.about-float {
+  position:absolute; top:24px; right:-18px;
+  background:var(--white); border-radius:12px; padding:14px 18px;
+  box-shadow:0 8px 30px rgba(26,63,160,0.15); border-left:4px solid var(--royal);
+}
+.af-num { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--royal); line-height:1; }
+.af-txt { font-size:10px; color:var(--gray); text-transform:uppercase; letter-spacing:1px; margin-top:2px; }
+.about-content .sec-sub { max-width:100%; }
+.about-content p { font-size:15.5px; line-height:1.9; color:var(--gray); margin-bottom:18px; }
+.about-content p strong { color:var(--royal-dark); }
+.spec-block { background:var(--white); border:1px solid var(--border); border-radius:12px; padding:22px 24px; margin:24px 0; }
+.spec-block h4 { font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--royal); margin-bottom:14px; }
+.spec-list { list-style:none; display:flex; flex-direction:column; gap:10px; }
+.spec-list li { font-size:14px; color:var(--dark); display:flex; align-items:flex-start; gap:10px; }
+.spec-list li::before { content:'›'; color:var(--royal); font-weight:700; font-size:16px; flex-shrink:0; line-height:1.3; }
+.qual-row { display:flex; flex-wrap:wrap; gap:10px; margin-top:20px; }
+.qtag { background:var(--sky); border:1px solid var(--sky-mid); color:var(--royal); font-size:12px; font-weight:600; padding:6px 16px; border-radius:50px; }
+
+/* ─── SERVICES ─── */
+#services { background:var(--white); }
+.svc-intro { text-align:center; }
+.svc-intro .sec-sub { margin:0 auto 52px; }
+.svc-filters { display:flex; flex-wrap:wrap; gap:10px; justify-content:center; margin-bottom:44px; }
+.f-btn { background:var(--light-gray); border:1px solid var(--border); border-radius:50px; font-family:'Inter',sans-serif; font-size:13px; font-weight:500; color:var(--gray); padding:9px 20px; cursor:pointer; transition:all 0.22s; }
+.f-btn.active,.f-btn:hover { background:var(--royal); color:var(--white); border-color:var(--royal); }
+.svc-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px,1fr)); gap:20px; }
+.svc-card { border:1.5px solid var(--border); border-radius:14px; padding:26px; transition:all 0.28s; position:relative; overflow:hidden; background:var(--white); }
+.svc-card::after { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--royal),var(--royal-light)); transform:scaleX(0); transform-origin:left; transition:transform 0.28s; }
+.svc-card:hover { transform:translateY(-5px); box-shadow:0 16px 40px rgba(26,63,160,0.1); border-color:var(--sky-mid); }
+.svc-card:hover::after { transform:scaleX(1); }
+.svc-icon { width:50px; height:50px; background:var(--sky); border-radius:11px; display:flex; align-items:center; justify-content:center; font-size:22px; margin-bottom:16px; transition:background 0.28s; }
+.svc-card:hover .svc-icon { background:var(--royal); }
+.svc-title { font-size:16px; font-weight:600; color:var(--royal-dark); margin-bottom:9px; }
+.svc-desc { font-size:13.5px; color:var(--gray); line-height:1.7; margin-bottom:14px; }
+.svc-chips { display:flex; flex-wrap:wrap; gap:6px; }
+.chip { background:var(--light-gray); border-radius:4px; font-size:11px; font-weight:500; color:var(--gray); padding:3px 10px; }
+.contact-cta-inline { display:inline-flex; align-items:center; gap:6px; color:var(--royal); font-size:13px; font-weight:600; margin-top:14px; text-decoration:none; }
+.contact-cta-inline:hover { text-decoration:underline; }
+
+/* ─── CONTACT ─── */
+#contact { background:var(--off); }
+.contact-wrap { display:grid; grid-template-columns:1fr 1.1fr; gap:70px; align-items:start; }
+.cinfo { }
+.cinfo-items { display:flex; flex-direction:column; gap:0; margin:32px 0; }
+.ci { display:flex; align-items:flex-start; gap:16px; padding:18px 0; border-bottom:1px solid var(--border); }
+.ci:last-child { border-bottom:none; }
+.ci-ico { width:44px; height:44px; background:var(--sky); border-radius:10px; display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.ci-lbl { font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--royal); margin-bottom:4px; }
+.ci-val { font-size:15px; color:var(--dark); font-weight:500; }
+.ci-val a { color:inherit; text-decoration:none; }
+.ci-val a:hover { color:var(--royal); text-decoration:underline; }
+.social-bar { display:flex; gap:12px; margin-top:8px; }
+.sb-link { width:44px; height:44px; border-radius:10px; background:var(--sky); border:1.5px solid var(--sky-mid); display:flex; align-items:center; justify-content:center; text-decoration:none; font-size:16px; transition:all 0.22s; color:var(--royal); font-weight:700; font-size:13px; }
+.sb-link:hover { background:var(--royal); color:var(--white); border-color:var(--royal); transform:translateY(-2px); }
+.cform-box { background:var(--white); border:1.5px solid var(--border); border-radius:18px; padding:36px; box-shadow:0 4px 24px rgba(26,63,160,0.06); }
+.cform-box h3 { font-family:'Playfair Display',serif; font-size:22px; font-weight:700; color:var(--royal-dark); margin-bottom:24px; }
+.fg { margin-bottom:18px; }
+.fg label { display:block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1px; color:var(--gray); margin-bottom:7px; }
+.fg input,.fg select,.fg textarea { width:100%; background:var(--off); border:1.5px solid var(--border); border-radius:8px; padding:12px 15px; font-family:'Inter',sans-serif; font-size:14px; color:var(--dark); outline:none; transition:border-color 0.22s; }
+.fg input:focus,.fg select:focus,.fg textarea:focus { border-color:var(--royal); background:var(--white); }
+.fg select option { background:var(--white); }
+.fg textarea { resize:vertical; min-height:100px; }
+.frow { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.submit-btn { width:100%; background:var(--royal); color:var(--white); font-family:'Inter',sans-serif; font-weight:700; font-size:15px; padding:16px; border:none; border-radius:8px; cursor:pointer; transition:all 0.25s; letter-spacing:0.4px; }
+.submit-btn:hover { background:var(--royal-dark); transform:translateY(-2px); box-shadow:0 8px 24px rgba(26,63,160,0.3); }
+
+/* ─── PAYMENT ─── */
+#payment { background:var(--white); }
+.pay-wrap { display:grid; grid-template-columns:1fr 1fr; gap:50px; align-items:start; }
+.pay-info h3 { font-family:'Playfair Display',serif; font-size:24px; font-weight:700; color:var(--royal-dark); margin-bottom:8px; }
+.pay-info p { font-size:15px; color:var(--gray); line-height:1.8; margin-bottom:24px; }
+.bank-box { background:var(--sky); border:1.5px solid var(--sky-mid); border-radius:14px; padding:24px; }
+.bank-box h4 { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:var(--royal); margin-bottom:16px; }
+.bank-row { display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid var(--sky-mid); }
+.bank-row:last-child { border-bottom:none; }
+.br-label { font-size:12px; color:var(--gray); font-weight:500; }
+.br-val { font-size:13px; color:var(--royal-dark); font-weight:700; font-family:monospace; }
+.upi-box { background:var(--royal); border-radius:14px; padding:24px; margin-top:16px; }
+.upi-box h4 { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.6); margin-bottom:12px; }
+.upi-id { font-size:15px; font-weight:700; color:var(--white); font-family:monospace; word-break:break-all; background:rgba(255,255,255,0.1); padding:12px 16px; border-radius:8px; margin-bottom:14px; }
+.upi-note { font-size:12px; color:rgba(255,255,255,0.65); line-height:1.6; }
+.qr-box { background:var(--off); border:1.5px dashed var(--border); border-radius:14px; padding:36px; text-align:center; }
+.qr-placeholder { width:160px; height:160px; background:var(--sky); border:2px dashed var(--sky-mid); border-radius:12px; margin:0 auto 16px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:8px; }
+.qr-placeholder .qr-icon { font-size:36px; }
+.qr-placeholder .qr-label { font-size:11px; color:var(--royal); font-weight:600; text-align:center; padding:0 10px; }
+.qr-box p { font-size:13px; color:var(--gray); margin-top:4px; }
+.qr-upi-below { font-size:12px; font-family:monospace; color:var(--royal); font-weight:700; margin-top:10px; background:var(--sky); padding:8px 14px; border-radius:6px; word-break:break-all; }
+
+/* ─── FOOTER ─── */
+footer { background:var(--royal-dark); padding:56px 6% 28px; }
+.foot-grid { max-width:1240px; margin:0 auto; display:grid; grid-template-columns:2fr 1fr 1fr; gap:56px; margin-bottom:44px; }
+.foot-brand { }
+.foot-logo-row { display:flex; align-items:center; gap:12px; margin-bottom:14px; }
+.fl-badge { width:42px; height:42px; background:var(--white); border-radius:9px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:2px; }
+.fl-badge .cs-f { font-family:'Playfair Display',serif; font-size:16px; font-weight:700; color:var(--royal); line-height:1; }
+.fl-badge .cs-fl { width:26px; height:2px; background:var(--royal); border-radius:2px; }
+.fl-name { font-size:16px; font-weight:700; color:var(--white); }
+.foot-desc { font-size:13.5px; color:rgba(255,255,255,0.45); line-height:1.8; margin-bottom:16px; }
+.foot-qual { font-size:12px; color:rgba(255,255,255,0.3); }
+.foot-col h5 { font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:1.5px; color:rgba(255,255,255,0.5); margin-bottom:14px; }
+.foot-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.foot-col ul li a { font-size:13.5px; color:rgba(255,255,255,0.5); text-decoration:none; transition:color 0.2s; }
+.foot-col ul li a:hover { color:var(--white); }
+.foot-bottom { max-width:1240px; margin:0 auto; padding-top:22px; border-top:1px solid rgba(255,255,255,0.08); display:flex; justify-content:space-between; align-items:center; gap:20px; flex-wrap:wrap; }
+.foot-bottom p { font-size:12.5px; color:rgba(255,255,255,0.3); }
+
+/* ─── ANIMATIONS ─── */
+.reveal { opacity:0; transform:translateY(22px); transition:opacity 0.65s ease, transform 0.65s ease; }
+.reveal.vis { opacity:1; transform:none; }
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .hero-grid{grid-template-columns:1fr} .hero-right{display:none}
+  .about-wrap{grid-template-columns:1fr} .contact-wrap{grid-template-columns:1fr}
+  .pay-wrap{grid-template-columns:1fr} .foot-grid{grid-template-columns:1fr 1fr} .about-float{display:none}
+}
+@media(max-width:768px){
+  .nav-links{display:none} .hamburger{display:flex}
+  .foot-grid{grid-template-columns:1fr; gap:28px}
+  .frow{grid-template-columns:1fr}
+  .hero-info{gap:20px} section{padding:64px 5%}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-brand">
+    <div class="cs-badge">
+      <span class="cs-text">CS</span>
+      <div class="cs-line"></div>
+    </div>
+    <div class="brand-text">
+      <div class="name">Abhishek Yadav & Co.</div>
+      <div class="sub">Company Secretaries · Lucknow</div>
+    </div>
+  </div>
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+    <a href="#payment">Payment</a>
+    <a href="tel:+917460022677" class="nav-cta">📞 +91 7460022677</a>
+  </div>
+  <div class="hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="home">
+  <div class="hero-circles">
+    <div class="hc hc1"></div><div class="hc hc2"></div><div class="hc hc3"></div>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-left">
+      <div class="hero-pill"><div class="hero-dot"></div><span>Company Secretaries in Practice · Lucknow, UP</span></div>
+      <h1 class="hero-h1">Abhishek Yadav <span class="under">&amp; Co.</span></h1>
+      <div class="hero-tagline">Your Complete Compliance Partner</div>
+      <p class="hero-desc">Corporate compliance and regulatory advisory services for businesses, startups, and NGOs. End-to-end support in business setup, legal documentation, and ongoing compliance management.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-w">Get Free Consultation →</a>
+        <a href="#services" class="btn-o">View Services</a>
+      </div>
+      <div class="hero-info">
+        <div class="hi-item"><div class="hi-num">14+</div><div class="hi-label">Service Areas</div></div>
+        <div class="hi-item"><div class="hi-num">100+</div><div class="hi-label">Services Offered</div></div>
+        <div class="hi-item"><div class="hi-num">UP</div><div class="hi-label">Lucknow Based</div></div>
+      </div>
+    </div>
+    <div class="hero-right">
+      <div class="hero-card"><div class="hc-top"><div class="hc-icon">🏢</div><div class="hc-title">Company Incorporation</div></div><div class="hc-desc">Pvt Ltd · LLP · OPC · Section 8 Company — complete setup from scratch.</div></div>
+      <div class="hero-card"><div class="hc-top"><div class="hc-icon">™️</div><div class="hc-title">Trademark & IP</div></div><div class="hc-desc">Protect your brand name, logo and creative works across India.</div></div>
+      <div class="hero-card"><div class="hc-top"><div class="hc-icon">🍽</div><div class="hc-title">FSSAI Food License</div></div><div class="hc-desc">Basic, State & Central FSSAI for restaurants, caterers, manufacturers.</div></div>
+      <div class="hero-card"><div class="hc-top"><div class="hc-icon">📋</div><div class="hc-title">Annual ROC Compliance</div></div><div class="hc-desc">AOC-4 · MGT-7 · DIR-3 KYC — timely filings, no penalties.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker-bar">
+  <div class="ticker-track" id="ticker">
+    <span class="t-item">Company Incorporation</span><span class="t-item">Annual ROC Compliance</span>
+    <span class="t-item">Trademark & Copyright</span><span class="t-item">FSSAI Food License</span>
+    <span class="t-item">MSME / Udyam</span><span class="t-item">DPIIT Startup India</span>
+    <span class="t-item">NGO / 12A / 80G</span><span class="t-item">IEC / Export / DGFT</span>
+    <span class="t-item">Labour / ESI / PF</span><span class="t-item">Drug License</span>
+    <span class="t-item">ISO Certification</span><span class="t-item">RERA — UP</span>
+    <span class="t-item">Environment / PCB NOC</span><span class="t-item">Secretarial Audit</span>
+    <span class="t-item">Company Incorporation</span><span class="t-item">Annual ROC Compliance</span>
+    <span class="t-item">Trademark & Copyright</span><span class="t-item">FSSAI Food License</span>
+    <span class="t-item">MSME / Udyam</span><span class="t-item">DPIIT Startup India</span>
+    <span class="t-item">NGO / 12A / 80G</span><span class="t-item">IEC / Export / DGFT</span>
+    <span class="t-item">Labour / ESI / PF</span><span class="t-item">Drug License</span>
+    <span class="t-item">ISO Certification</span><span class="t-item">RERA — UP</span>
+    <span class="t-item">Environment / PCB NOC</span><span class="t-item">Secretarial Audit</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-wrap">
+      <div class="about-visual reveal">
+        <div class="about-box">
+          <div class="ab-logo"><span class="cs-big">CS</span><div class="cs-line2"></div></div>
+          <div class="ab-name">CS Abhishek Yadav</div>
+          <div class="ab-role">Practicing Company Secretary</div>
+          <div class="ab-qual">B.Com · LL.B · ACS</div>
+          <div class="ab-tags">
+            <span class="abtag">ICSI Member</span>
+            <span class="abtag">Company Secretary</span>
+            <span class="abtag">Lucknow, UP</span>
+            <span class="abtag">Est. 2025</span>
+          </div>
+        </div>
+        <div class="about-float">
+          <div class="af-num">2025</div>
+          <div class="af-txt">Est. Year</div>
+        </div>
+      </div>
+      <div class="about-content reveal">
+        <div class="sec-label">About the Firm</div>
+        <h2 class="sec-h2">Abhishek Yadav & Co.</h2>
+        <p><strong>CS Abhishek Yadav</strong> is a Practicing Company Secretary committed to delivering reliable corporate compliance and regulatory advisory services. Experienced in handling company law matters, business registrations, and regulatory approvals for startups, businesses, and NGOs. Focused on providing practical guidance and timely compliance support to help clients operate smoothly and lawfully.</p>
+        <p>Based in Lucknow, Uttar Pradesh, the firm provides end-to-end support to clients across UP and India — from the initial stage of business setup through to ongoing compliance management.</p>
+        <div class="spec-block">
+          <h4>Areas of Specialisation</h4>
+          <ul class="spec-list">
+            <li>Corporate compliance and regulatory advisory for businesses, startups, and NGOs</li>
+            <li>Company law compliances and ROC filings</li>
+            <li>Licenses and registrations — FSSAI, Trademark, ISO, MSME, and regulatory approvals</li>
+            <li>Business setup, legal documentation, and ongoing compliance management</li>
+            <li>Practical, reliable, and timely compliance solutions for growing enterprises</li>
+          </ul>
+        </div>
+        <div class="qual-row">
+          <span class="qtag">B.Com</span>
+          <span class="qtag">LL.B</span>
+          <span class="qtag">ACS (ICSI)</span>
+          <span class="qtag">Hindi & English</span>
+          <span class="qtag">Lucknow, UP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="svc-intro reveal">
+      <div class="sec-label">Our Services</div>
+      <h2 class="sec-h2">Complete Compliance Solutions</h2>
+      <p class="sec-sub">All services come with personalised guidance, accurate documentation, and timely filing. For fee details, please contact us directly.</p>
+    </div>
+    <div class="svc-filters reveal">
+      <button class="f-btn active" onclick="filter('all',this)">All Services</button>
+      <button class="f-btn" onclick="filter('roc',this)">MCA / ROC</button>
+      <button class="f-btn" onclick="filter('food',this)">FSSAI</button>
+      <button class="f-btn" onclick="filter('ip',this)">Trademark & IP</button>
+      <button class="f-btn" onclick="filter('startup',this)">Startup / MSME</button>
+      <button class="f-btn" onclick="filter('ngo',this)">NGO / Trust</button>
+      <button class="f-btn" onclick="filter('labour',this)">Labour</button>
+      <button class="f-btn" onclick="filter('other',this)">Other</button>
+    </div>
+    <div class="svc-grid" id="svcGrid">
+
+      <div class="svc-card reveal" data-cat="roc">
+        <div class="svc-icon">🏢</div>
+        <div class="svc-title">Company / LLP / OPC Incorporation</div>
+        <div class="svc-desc">Complete incorporation of Private Limited, LLP, One Person Company, and Section 8 Company — including name reservation, MOA/AOA drafting, DSC, DIN, PAN, and TAN.</div>
+        <div class="svc-chips"><span class="chip">Pvt Ltd</span><span class="chip">LLP</span><span class="chip">OPC</span><span class="chip">Section 8</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="roc">
+        <div class="svc-icon">📋</div>
+        <div class="svc-title">Annual ROC / MCA Compliance</div>
+        <div class="svc-desc">AOC-4, MGT-7/7A, ADT-1, DIR-3 KYC, MGT-14, INC-20A, LLP Form 11 & 8 — complete annual filing managed on time to avoid penalties.</div>
+        <div class="svc-chips"><span class="chip">AOC-4</span><span class="chip">MGT-7</span><span class="chip">DIR-3 KYC</span><span class="chip">LLP Annual</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="roc">
+        <div class="svc-icon">✏️</div>
+        <div class="svc-title">Company Amendments & Changes</div>
+        <div class="svc-desc">Director appointments/resignations, name change, registered office shift, increase in authorised capital, share allotment, MOA/AOA amendments.</div>
+        <div class="svc-chips"><span class="chip">DIR-12</span><span class="chip">INC-24</span><span class="chip">SH-7</span><span class="chip">PAS-3</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="roc">
+        <div class="svc-icon">📊</div>
+        <div class="svc-title">Secretarial Audit (MR-3)</div>
+        <div class="svc-desc">Mandatory secretarial audit, board and AGM management, statutory registers maintenance, minutes drafting, and secretarial compliance certifications.</div>
+        <div class="svc-chips"><span class="chip">MR-3</span><span class="chip">MGT-8</span><span class="chip">AGM</span><span class="chip">Minutes</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="food">
+        <div class="svc-icon">🍽</div>
+        <div class="svc-title">FSSAI Food License</div>
+        <div class="svc-desc">Basic, State, and Central FSSAI licenses via FoSCoS portal. For restaurants, caterers, manufacturers, cloud kitchens, and food exporters. Renewal and modifications also covered.</div>
+        <div class="svc-chips"><span class="chip">Basic</span><span class="chip">State</span><span class="chip">Central</span><span class="chip">Renewal</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="ip">
+        <div class="svc-icon">™️</div>
+        <div class="svc-title">Trademark & Copyright</div>
+        <div class="svc-desc">Trademark registration, objection reply, opposition handling, renewal, and TM assignment. Copyright registration for literary, artistic, and software works.</div>
+        <div class="svc-chips"><span class="chip">TM-A</span><span class="chip">Objection</span><span class="chip">Renewal</span><span class="chip">Copyright</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="startup">
+        <div class="svc-icon">🚀</div>
+        <div class="svc-title">DPIIT Startup India Recognition</div>
+        <div class="svc-desc">DPIIT Startup Recognition, 80-IAC tax holiday application (3-year income tax exemption), Seed Fund documentation, GeM registration, and startup advisory.</div>
+        <div class="svc-chips"><span class="chip">DPIIT</span><span class="chip">80-IAC</span><span class="chip">Seed Fund</span><span class="chip">GeM</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="startup">
+        <div class="svc-icon">🏭</div>
+        <div class="svc-title">MSME / Udyam Registration</div>
+        <div class="svc-desc">Udyam Registration for access to government schemes, priority sector lending, tender preferences, and MSME Samadhaan portal for delayed payment resolution.</div>
+        <div class="svc-chips"><span class="chip">Udyam</span><span class="chip">MSME Benefits</span><span class="chip">Samadhaan</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="ngo">
+        <div class="svc-icon">🕌</div>
+        <div class="svc-title">NGO / Trust / Society Registration</div>
+        <div class="svc-desc">Trust and Society registration in UP, 12A + 80G + 12AB exemptions, NGO Darpan (NITI Aayog), CSR-1 MCA filing, FCRA registration for foreign contributions.</div>
+        <div class="svc-chips"><span class="chip">12A</span><span class="chip">80G</span><span class="chip">Darpan</span><span class="chip">CSR-1</span><span class="chip">FCRA</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="labour">
+        <div class="svc-icon">👷</div>
+        <div class="svc-title">Labour & HR Compliance</div>
+        <div class="svc-desc">Shop & Establishment (UP), ESI registration, PF/EPFO, Contract Labour license, Professional Tax, POSH ICC formation, and Factories Act registration.</div>
+        <div class="svc-chips"><span class="chip">ESI</span><span class="chip">PF/EPFO</span><span class="chip">Shop Act</span><span class="chip">POSH</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="other">
+        <div class="svc-icon">💊</div>
+        <div class="svc-title">Drug License (UP)</div>
+        <div class="svc-desc">Retail drug license, wholesale drug license, and manufacturing license from UP Drug Licensing Authority — for pharmacies, distributors, and manufacturers.</div>
+        <div class="svc-chips"><span class="chip">Retail</span><span class="chip">Wholesale</span><span class="chip">UP DLA</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="other">
+        <div class="svc-icon">🔬</div>
+        <div class="svc-title">ISO Certification Consultancy</div>
+        <div class="svc-desc">ISO 9001, 22000, 14001, 45001, 27001, 13485 — documentation preparation, gap analysis, and internal audit support for certification readiness.</div>
+        <div class="svc-chips"><span class="chip">ISO 9001</span><span class="chip">ISO 22000</span><span class="chip">ISO 14001</span><span class="chip">ISO 45001</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="other">
+        <div class="svc-icon">🏠</div>
+        <div class="svc-title">RERA Registration (UP)</div>
+        <div class="svc-desc">RERA project and agent registration, quarterly progress reports, annual audit certificates, and RERA compliance management for Lucknow real estate developers.</div>
+        <div class="svc-chips"><span class="chip">Project Reg</span><span class="chip">Agent Reg</span><span class="chip">Quarterly RPT</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="other">
+        <div class="svc-icon">🌿</div>
+        <div class="svc-title">Environment / PCB NOC</div>
+        <div class="svc-desc">Consent to Establish (CTE) and Consent to Operate (CTO) from UP Pollution Control Board, PCB Annual Returns, Hazardous Waste authorisation, and E-Waste compliance.</div>
+        <div class="svc-chips"><span class="chip">CTE</span><span class="chip">CTO</span><span class="chip">UPPCB</span><span class="chip">Hazwaste</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+      <div class="svc-card reveal" data-cat="other">
+        <div class="svc-icon">📦</div>
+        <div class="svc-title">Import Export Code / DGFT</div>
+        <div class="svc-desc">IEC registration, APEDA, RCMC application, AD Code, and export documentation support. Particularly relevant for Lucknow's chikankari, handicraft, and food exporters.</div>
+        <div class="svc-chips"><span class="chip">IEC</span><span class="chip">APEDA</span><span class="chip">AD Code</span><span class="chip">RCMC</span></div>
+        <a href="#contact" class="contact-cta-inline">Enquire now ›</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="contact-wrap">
+      <div class="cinfo reveal">
+        <div class="sec-label">Contact Us</div>
+        <h2 class="sec-h2">Let's Connect</h2>
+        <p class="sec-sub">Reach out for a free initial consultation. We are available Monday to Saturday, 10 AM – 7 PM.</p>
+        <div class="cinfo-items">
+          <div class="ci">
+            <div class="ci-ico">📞</div>
+            <div>
+              <div class="ci-lbl">Phone / WhatsApp</div>
+              <div class="ci-val"><a href="tel:+917460022677">+91 7460022677</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico">📧</div>
+            <div>
+              <div class="ci-lbl">Email</div>
+              <div class="ci-val"><a href="mailto:abhishekyadavco26@gmail.com">abhishekyadavco26@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico">🌐</div>
+            <div>
+              <div class="ci-lbl">Website</div>
+              <div class="ci-val"><a href="http://www.abhishekyadavco26.com" target="_blank">www.abhishekyadavco26.com</a></div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico">📍</div>
+            <div>
+              <div class="ci-lbl">Office Address</div>
+              <div class="ci-val">285Kha/020A, Mill Road, Aishbagh,<br>Lucknow — 226004, Uttar Pradesh</div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-ico">🕐</div>
+            <div>
+              <div class="ci-lbl">Office Hours</div>
+              <div class="ci-val">Monday – Saturday: 10:00 AM – 7:00 PM</div>
+            </div>
+          </div>
+        </div>
+        <div class="social-bar">
+          <a href="https://www.linkedin.com/in/cs-abhishek-yadav-988435182" target="_blank" class="sb-link" title="LinkedIn">in</a>
+          <a href="https://www.instagram.com/abhishek_yadav_and_co" target="_blank" class="sb-link" title="Instagram">📷</a>
+          <a href="https://wa.me/917460022677" target="_blank" class="sb-link" title="WhatsApp">💬</a>
+        </div>
+      </div>
+
+      <div class="cform-box reveal">
+        <h3>Send a Message</h3>
+        <div class="frow">
+          <div class="fg"><label>Your Name</label><input type="text" placeholder="Full name"></div>
+          <div class="fg"><label>Phone Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+        </div>
+        <div class="fg"><label>Email Address</label><input type="email" placeholder="your@email.com"></div>
+        <div class="fg">
+          <label>Service Required</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Company / LLP / OPC Incorporation</option>
+            <option>Annual ROC / MCA Compliance</option>
+            <option>Trademark & Copyright Registration</option>
+            <option>FSSAI Food License</option>
+            <option>MSME / Udyam Registration</option>
+            <option>DPIIT Startup India Recognition</option>
+            <option>NGO / Trust / Society Registration</option>
+            <option>Import Export Code (IEC) / DGFT</option>
+            <option>Labour & HR Compliance (ESI / PF)</option>
+            <option>Drug License (UP)</option>
+            <option>ISO Certification Consultancy</option>
+            <option>RERA Registration (UP)</option>
+            <option>Environment / PCB NOC</option>
+            <option>Secretarial Audit (MR-3)</option>
+            <option>Other / Not Sure</option>
+          </select>
+        </div>
+        <div class="fg"><label>Message</label><textarea placeholder="Briefly describe your requirement..."></textarea></div>
+        <button class="submit-btn" onclick="handleSubmit()">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PAYMENT -->
+<section id="payment">
+  <div class="container">
+    <div class="reveal" style="text-align:center;margin-bottom:52px;">
+      <div class="sec-label">Payment</div>
+      <h2 class="sec-h2">Payment Details</h2>
+      <p class="sec-sub" style="margin:0 auto;">You may pay via UPI, NEFT, RTGS, or direct bank transfer. Use the details below.</p>
+    </div>
+    <div class="pay-wrap">
+      <div class="pay-info reveal">
+        <h3>Bank Transfer Details</h3>
+        <p>For NEFT / RTGS / direct bank transfer, use the account details below. Please share the transaction screenshot on WhatsApp after payment.</p>
+        <div class="bank-box">
+          <h4>Bank Account Information</h4>
+          <div class="bank-row"><span class="br-label">Account Holder</span><span class="br-val">Abhishek Yadav And Co</span></div>
+          <div class="bank-row"><span class="br-label">Bank Name</span><span class="br-val">Union Bank of India</span></div>
+          <div class="bank-row"><span class="br-label">Account Number</span><span class="br-val">360801010053109</span></div>
+          <div class="bank-row"><span class="br-label">IFSC Code</span><span class="br-val">UBIN0536083</span></div>
+          <div class="bank-row"><span class="br-label">Account Type</span><span class="br-val">Current Account</span></div>
+        </div>
+        <div class="upi-box">
+          <h4>UPI ID</h4>
+          <div class="upi-id">QR917460022677-3109@unionbankofindia</div>
+          <div class="upi-note">Works with GPay · PhonePe · Paytm · BHIM · all UPI apps<br>After payment, please share screenshot on WhatsApp: <strong>+91 7460022677</strong></div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="qr-box">
+          <div class="qr-placeholder">
+            <div class="qr-icon">📱</div>
+            <div class="qr-label">Add your UPI QR Code image here</div>
+          </div>
+          <p>Scan to pay via any UPI app</p>
+          <div class="qr-upi-below">QR917460022677-3109@unionbankofindia</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <div class="foot-logo-row">
+        <div class="fl-badge"><span class="cs-f">CS</span><div class="cs-fl"></div></div>
+        <div class="fl-name">Abhishek Yadav & Co.</div>
+      </div>
+      <div class="foot-desc">Practicing Company Secretaries based in Lucknow, Uttar Pradesh. Corporate compliance, regulatory advisory, business registrations, and licensing services across UP and India.</div>
+      <div class="foot-qual">B.Com · LL.B · ACS | Established 2025 | Lucknow, UP — 226004</div>
+    </div>
+    <div class="foot-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#payment">Payment</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h5>Contact</h5>
+      <ul>
+        <li><a href="tel:+917460022677">+91 7460022677</a></li>
+        <li><a href="mailto:abhishekyadavco26@gmail.com">abhishekyadavco26@gmail.com</a></li>
+        <li><a href="#">285Kha/020A, Mill Road, Aishbagh, Lucknow — 226004</a></li>
+        <li><a href="https://www.linkedin.com/in/cs-abhishek-yadav-988435182" target="_blank">LinkedIn</a></li>
+        <li><a href="https://www.instagram.com/abhishek_yadav_and_co" target="_blank">Instagram</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <p>© 2025 Abhishek Yadav & Co. | Company Secretaries | Lucknow, Uttar Pradesh</p>
+    <p>285Kha/020A, Mill Road, Aishbagh, Lucknow — 226004</p>
+  </div>
+</footer>
+
+<script>
+// Reveal on scroll
+const els = document.querySelectorAll('.reveal');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(()=>e.target.classList.add('vis'), i*55); obs.unobserve(e.target); } });
+}, {threshold:0.07});
+els.forEach(el=>obs.observe(el));
+
+// Service filter
+function filter(cat, btn) {
+  document.querySelectorAll('.f-btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.svc-card').forEach(c=>{
+    c.style.display = (cat==='all'||c.dataset.cat===cat) ? 'block' : 'none';
+  });
+}
+
+// Mobile nav
+function toggleNav() {
+  const nl = document.getElementById('navLinks');
+  const open = nl.style.display === 'flex';
+  nl.style.display = open ? 'none' : 'flex';
+  if (!open) {
+    nl.style.flexDirection='column'; nl.style.position='absolute';
+    nl.style.top='70px'; nl.style.left='0'; nl.style.right='0';
+    nl.style.background='rgba(15,40,112,0.98)'; nl.style.padding='16px 6%'; nl.style.gap='6px';
+  }
+}
+
+// Form submit
+function handleSubmit() {
+  alert('Thank you for your message!\n\nWe will contact you within 24 hours.\nFor urgent queries, WhatsApp us at: +91 7460022677');
+}
+
+// Scroll shadow
+window.addEventListener('scroll',()=>{ document.getElementById('nav').style.boxShadow = window.scrollY>10?'0 4px 24px rgba(0,0,0,0.2)':'none'; });
+</script>
+</body>
+</html>
